@@ -1,8 +1,11 @@
 # Script signing
 
-The `scriptSignature` and `scriptPublicKey` should be set whenever you deploy your script (NOT REQUIRED DURING DEVELOPMENT). The purpose of these fields is to verify that a plugin update was made by the same individual that developed the original plugin. This prevents somebody from hijacking your plugin without having access to your public private keypair. When this value is not present, you can still use this plugin, however the user will be informed that these values are missing and that this is a security risk. Here is an example script showing you how to generate these values. See below for more details.
+The `scriptSignature` and `scriptPublicKey` fields in your config json file should be set whenever you deploy your script (NOT REQUIRED DURING DEVELOPMENT). The purpose of these fields is to verify that a plugin update was made by the same individual that developed the original plugin. This prevents somebody from hijacking your plugin without having access to your public private keypair. When this value is not present, you can still use this plugin, however the user will be informed that these values are missing and that this is a security risk. [Below](#example-script) is an example script showing you how to generate these values. See below for more details.
 
-You can use this script to generate the `scriptSignature` and `scriptPublicKey` fields above:
+The `sign.sh` scripts are used to sign the scripts you used in your plugin; all the `.js` files. The script takes your public and private keys to generate you a signature and public key. First before using this script, you need to generate keys. On Unix systems, you can use the `ssh-keygen` command to generate a keypair; `ssh-keygen -t rsa -b 4096 -m PEM -f ~/.ssh/id_rsa`. This will generate a private key at `~/.ssh/id_rsa` and a public key at `~/.ssh/id_rsa.pub`. Or if you wish to store it somewhere else, make sure to make sure the script knows where to put it, and remove the `-f ~/.ssh/id_rsa` from the command before and specify when it asks where you want to store it. 
+
+## Example script
+You can use (or build off of) this template example script to generate the `scriptSignature` and `scriptPublicKey` fields above, but with this script you'll have to manually add them into the config json file.
 
 `sign-script.sh`
 ```sh
