@@ -10,6 +10,7 @@
 - [Content Types](#content-types)
 - [Example plugin](#example-plugin)
 - [Pagination](#pagination)
+- [Settings](#settings)
 - [Script signing](#script-signing)
 - [Plugin Deployment](#plugin-deployment)
 - [Common Issues and Troubleshooting](#common-issues-and-troubleshooting)
@@ -133,6 +134,12 @@ See [Example Plugin.md](https://gitlab.futo.org/videostreaming/grayjay/-/blob/ma
 Plugins use "Pagers" to send paginated data to the GrayJay app.
 
 See [Pagers.md](https://gitlab.futo.org/videostreaming/grayjay/-/blob/master/docs/Pagers.md)
+
+## Settings
+
+Plugins can have settings, which the user can change to customize the plugin.
+
+See [Settings.md](https://gitlab.futo.org/videostreaming/grayjay/-/blob/master/docs/Settings.md)
 
 ## Script signing
 
